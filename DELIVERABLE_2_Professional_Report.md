@@ -4,7 +4,7 @@
 **Student Name**: Vaibhav Uniyal  
 **Course**: Blockchain Technology  
 **Contract Address**: 0xd9145CCE52D386f254917e481eB44e9943F39138  
-**GitHub Repository**: [[Your Repository Link]](https://github.com/Vaibhav-Uniyal/Smart_contract_solution/)
+**GitHub Repository**: [[Repository Link]](https://github.com/Vaibhav-Uniyal/Smart_contract_solution/)
 
 ---
 
