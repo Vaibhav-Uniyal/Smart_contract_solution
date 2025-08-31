@@ -1,11 +1,10 @@
 # Blockchain in Trade Finance: Smart Contract Solution
 ## Professional Report
 
-**Student Name**: [Your Name]  
+**Student Name**: Vaibhav Uniyal  
 **Course**: Blockchain Technology  
-**Date**: December 2024  
 **Contract Address**: 0xd9145CCE52D386f254917e481eB44e9943F39138  
-**GitHub Repository**: [Your Repository Link]
+**GitHub Repository**: [[Your Repository Link]](https://github.com/Vaibhav-Uniyal/Smart_contract_solution/)
 
 ---
 
