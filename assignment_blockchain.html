@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Guide: Blockchain in Trade Finance Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f4;
+      color: #292524;
+    }
+    .section-card {
+      background-color: #ffffff;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                  0 2px 4px -2px rgb(0 0 0 / 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+    .interactive-card {
+      cursor: pointer;
+      border: 1px solid #d6d3d1;
+    }
+    .interactive-card.active {
+      border-color: #0d9488;
+      box-shadow: 0 0 0 2px #5eead4;
+    }
+    .flow-step {
+      transition: all 0.3s ease-in-out;
+      border: 2px solid transparent;
+    }
+    .flow-step.active {
+      background-color: #ccfbf1;
+      border-color: #0d9488;
+    }
+    .flow-line {
+      height: 2px;
+      background-color: #a8a29e;
+    }
+  </style>
+</head>
+<body>
+  <div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-teal-700 mb-2">Blockchain in Trade Finance</h1>
+      <p class="text-xl text-stone-600">An Interactive Guide to the Smart Contract Project</p>
+    </header>
+
+    <main class="space-y-12">
+      <!-- Objective -->
+      <section id="objective" class="section-card p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-stone-800 mb-4">🎯 Project Objective</h2>
+        <p class="text-stone-600 leading-relaxed">
+          This project challenges you to apply your theoretical knowledge of smart contracts to a practical, real-world scenario in the trade finance industry. You will design, implement, and document a complete smart contract solution that automates the key stages of a trade transaction between a buyer and a seller, enhancing security and efficiency.
+        </p>
+      </section>
+
+      <!-- Interactive Scenario -->
+      <section id="scenario" class="section-card p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-stone-800 mb-2">🌐 Interactive Scenario</h2>
+        <p class="text-stone-600 mb-6">Click through the steps below to visualize the trade transaction flow.</p>
+        <div class="lg:flex lg:space-x-8">
+          <div class="lg:w-1/2 flex flex-col items-center space-y-4 p-4 rounded-lg bg-stone-50 border border-stone-200">
+            <div class="flex items-center justify-around w-full">
+              <div id="actor-buyer" class="text-center p-3 rounded-lg">
+                <span class="text-4xl">👤</span>
+                <p class="font-semibold">Buyer</p>
+              </div>
+              <div id="actor-seller" class="text-center p-3 rounded-lg">
+                <span class="text-4xl">👤</span>
+                <p class="font-semibold">Seller</p>
+              </div>
+            </div>
+            <div id="actor-contract" class="text-center p-4 rounded-lg border-2 border-dashed border-teal-500 bg-teal-50">
+              <span class="text-4xl">📄</span>
+              <p class="font-bold text-teal-700">Smart Contract</p>
+              <p class="text-sm text-teal-600">(Escrow & Rules)</p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 mt-6 lg:mt-0">
+            <div id="scenario-steps" class="space-y-3"></div>
+            <div id="scenario-description" class="mt-4 p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 min-h-[100px]">
+              Select a step to see its description.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Requirements -->
+      <section id="requirements" class="section-card p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-stone-800 mb-2">🛠 Key Requirements</h2>
+        <p class="text-stone-600 mb-6">Click each card to expand details.</p>
+        <div id="requirements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+      
+      <!-- Process Flow -->
+      <section id="process-flow" class="section-card p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-stone-800 mb-2">🔄 Transaction Process Flow</h2>
+        <p class="text-stone-600 mb-6">Simulates smart contract states. Use button to advance.</p>
+        <div class="relative overflow-x-auto p-2">
+          <div class="flex items-center w-full min-w-[700px]"></div>
+        </div>
+        <div class="mt-6 text-center">
+          <div id="flow-description" class="p-4 rounded-lg bg-stone-50 border border-stone-200 text-stone-700 min-h-[80px] mb-4">
+            The process starts with the buyer's payment held in escrow.
+          </div>
+          <button id="next-step-btn" class="bg-teal-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-teal-700 transition-colors">
+            Next Step
+          </button>
+        </div>
+      </section>
+
+      <!-- Deliverables -->
+      <section id="deliverables" class="section-card p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-stone-800 mb-2">📦 Project Deliverables</h2>
+        <p class="text-stone-600 mb-6">Click to expand details.</p>
+        <ul id="deliverables-list" class="space-y-4"></ul>
+      </section>
+    </main>
+
+    <footer class="text-center mt-12 text-stone-500 text-sm">
+      <p>This interactive guide is designed to clarify the project requirements.</p>
+      <p>&copy; 2025 Blockchain Course</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scenarioData = [
+        { title: '1. Transaction Initiation', description: 'Buyer deposits payment into escrow.', actors: ['buyer','contract'] },
+        { title: '2. Document Verification', description: 'Seller uploads documents, contract verifies.', actors: ['seller','contract'] },
+        { title: '3. Shipment Tracking', description: 'State updated from Shipped to Delivered.', actors: ['seller','buyer'] },
+        { title: '4. Automated Payment', description: 'Contract releases payment to Seller.', actors: ['contract','seller'] },
+        { title: '5. Dispute Resolution', description: 'Third party intervenes if dispute arises.', actors: ['buyer','seller','contract'] }
+      ];
+
+      const requirementsData = [
+        { icon: '➡', title: 'Transaction Initiation', content: 'Buyer and Seller initiate trade. Payment deposited.' },
+        { icon: '✅', title: 'Document Verification', content: 'Smart contract verifies trade docs via hash.' },
+        { icon: '🚚', title: 'Shipment Tracking', content: 'Update state: PaymentHeld → Shipped → Delivered.' },
+        { icon: '💸', title: 'Automated Payments', content: 'Payment auto-released once conditions met.' },
+        { icon: '⚖', title: 'Dispute Resolution', content: 'Third party can override in disputes.' }
+      ];
+
+      const flowData = [
+        { state: 'PaymentHeld', description: 'Funds held in escrow.' },
+        { state: 'Shipped', description: 'Goods shipped, docs verified.' },
+        { state: 'Delivered', description: 'Buyer confirms receipt.' },
+        { state: 'Completed', description: 'Funds released to Seller.' }
+      ];
+
+      const deliverablesData = [
+        { title: 'Smart Contract Code', details: 'Well-commented Solidity contract.' },
+        { title: 'Professional Report', details: '5–10 page report covering overview, architecture, explanation, testing, challenges.', subItems: [
+          'Project Overview','Technical Architecture','Code Explanation','Testing & Results','Challenges & Future Improvements'
+        ]}
+      ];
+
+      function initScenario() {
+        const stepsContainer = document.getElementById('scenario-steps');
+        const desc = document.getElementById('scenario-description');
+        const actors = {
+          buyer: document.getElementById('actor-buyer'),
+          seller: document.getElementById('actor-seller'),
+          contract: document.getElementById('actor-contract')
+        };
+        scenarioData.forEach(step => {
+          const btn = document.createElement('button');
+          btn.className = 'w-full text-left p-3 rounded-lg border border-stone-300 bg-white hover:bg-stone-100';
+          btn.textContent = step.title;
+          btn.onclick = () => {
+            desc.textContent = step.description;
+            Object.values(actors).forEach(el => el.classList.remove('bg-amber-200','scale-110'));
+            step.actors.forEach(a => actors[a].classList.add('bg-amber-200','scale-110'));
+            document.querySelectorAll('#scenario-steps button').forEach(b=>b.classList.remove('bg-teal-100','border-teal-500'));
+            btn.classList.add('bg-teal-100','border-teal-500');
+          };
+          stepsContainer.appendChild(btn);
+        });
+      }
+
+      function initRequirements() {
+        const grid = document.getElementById('requirements-grid');
+        grid.innerHTML = requirementsData.map(req=>`
+          <div class="interactive-card rounded-lg p-4 border">
+            <div class="font-semibold text-lg flex items-center">
+              <span class="mr-3 text-xl">${req.icon}</span>${req.title}
+            </div>
+            <div class="details hidden text-stone-600 mt-3 pt-3 border-t">${req.content}</div>
+          </div>
+        `).join('');
+        grid.addEventListener('click', e=>{
+          const card = e.target.closest('.interactive-card');
+          if(card){
+            const details = card.querySelector('.details');
+            const active = card.classList.contains('active');
+            document.querySelectorAll('.interactive-card').forEach(c=>{
+              c.classList.remove('active');
+              c.querySelector('.details').classList.add('hidden');
+            });
+            if(!active){
+              card.classList.add('active');
+              details.classList.remove('hidden');
+            }
+          }
+        });
+      }
+
+      function initProcessFlow() {
+        const container = document.querySelector('#process-flow .flex');
+        container.innerHTML = flowData.map((s,i)=>`
+          ${i>0?'<div class="flex-1 flow-line"></div>':''}
+          <div class="flow-step text-center p-3 rounded-lg w-40" data-step="${i}">
+            <p class="font-semibold">${s.state}</p>
+          </div>
+        `).join('');
+        let idx=0;
+        const steps = document.querySelectorAll('.flow-step');
+        const desc = document.getElementById('flow-description');
+        const btn = document.getElementById('next-step-btn');
+        function update(i){
+          steps.forEach((s,j)=>s.classList.toggle('active',j===i));
+          desc.textContent = flowData[i].description;
+          btn.textContent = i===flowData.length-1?'Reset Process':'Next Step';
+        }
+        btn.onclick=()=>{ idx=(idx+1)%flowData.length; update(idx); };
+        update(0);
+      }
+
+      function initDeliverables() {
+        const list=document.getElementById('deliverables-list');
+        list.innerHTML=deliverablesData.map(d=>`
+          <li class="bg-stone-50 border rounded-lg p-4">
+            <div class="flex items-start cursor-pointer deliverable-item">
+              <span class="text-2xl mr-4">📥</span>
+              <div><h4 class="font-bold text-lg">${d.title}</h4><p>${d.details}</p></div>
+              ${d.subItems?'<span class="ml-auto text-2xl expand-icon">▶</span>':''}
+            </div>
+            ${d.subItems?`<ul class="sub-list hidden mt-4 pl-10 space-y-2">${d.subItems.map(s=>`<li>✔ ${s}</li>`).join('')}</ul>`:''}
+          </li>
+        `).join('');
+        list.addEventListener('click',e=>{
+          const item=e.target.closest('.deliverable-item');
+          if(item){
+            const sub=item.parentElement.querySelector('.sub-list');
+            const icon=item.querySelector('.expand-icon');
+            if(sub){ sub.classList.toggle('hidden'); icon.classList.toggle('rotate-90'); }
+          }
+        });
+      }
+
+      initScenario(); initRequirements(); initProcessFlow(); initDeliverables();
+    });
+  </script>
+</body>
+</html>

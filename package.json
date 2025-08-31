@@ -1,0 +1,29 @@
+{
+  "name": "trade-escrow-contract",
+  "version": "1.0.0",
+  "description": "A Solidity smart contract for trade escrow with document verification",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy-local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy-sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "node": "npx hardhat node"
+  },
+  "keywords": [
+    "solidity",
+    "blockchain",
+    "escrow",
+    "smart-contract",
+    "hardhat"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0"
+  }
+}
